@@ -1,17 +1,26 @@
 package demo
 fun main (args: Array<String>) {
 
-    val myName = "Wil Blake"
-    val longStr = """This is a long string ...."""
-    println("String len : ${longStr.length}")
-    println("1 + 2 = ${1 + 2}")
-    var str1 = "A random string"
-    var str2 = "a random string"
-    println("Strings Equal: ${str1.equals(str2)}")
-    println("Compare A to B: ${"A".compareTo("B")}")
+   var myArray = arrayOf(1,1.23,"Doug")
 
-    println("2nd Index : ${str1.get(2)}")
-    println("2nd Index : ${str1[2]}")
-    println("2nd - 7th Index : ${str1.subSequence(2,8)}")
-    println("Contains random : ${str1.contains("random")}")
+    println(myArray[2])
+
+    myArray[1] = 3.14
+    println("Array Length: ${myArray.size} ")
+
+    println("Doug in Array  : ${myArray.contains("Doug")}")
+
+    var partArray = myArray.copyOfRange(0,1)
+
+    println("First: ${myArray.first()}")
+
+    println("Doug Index : ${myArray.indexOf("Doug")}")
+
+    var sqArray = Array(5,{x -> x * x})
+    println(sqArray[2])
+
+    var arr2: Array<Int> = arrayOf(1,2,3)
+
+
+
 }
