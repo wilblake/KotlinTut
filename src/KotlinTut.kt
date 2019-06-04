@@ -1,40 +1,35 @@
 package demo
 
-import java.util.Random
+
 fun main ( args: Array<String>) {
 
-for (x in 1..10 ) {
-    println("Loop : $x")
+    fun add(num1: Int, num2: Int): Int = num1 + num2
+    println("5 + 4 = ${add(5, 4)}")
+
+    // Single line function doesn't need return type
+    // Note default values
+    fun subtract(num1: Int = 1, num2: Int = 1) = num1 - num2
+    println("5 - 4 = ${subtract(5, 4)}")
+
+    // Named params
+    println("4 - 5 = ${subtract(num2 = 5, num1 = 4)}")
+
+    // Unit , not void
+    fun sayHello(name: String): Unit = println("Hello $name")
+
+    sayHello("Paul")
+
+    val (two, three) = nextTwo(1)
+    println("1 $two $three")
 }
 
-    val rand = Random()
-    val MagicNum = rand.nextInt(50)+1
-
-    var guess = 0
-
-    while (MagicNum !=guess) {
-        guess += 1
-    }
-    println("Magic Number was $guess")
-
-for ( x in 1..20 )
-{
-    if (x %2 == 0)
-    {
-      continue
-    }
-    println("Odd: $x")
-    if (x==15) break
-}
-
-    var arr3: Array<Int> = arrayOf(3,6,9)
-    for (i in arr3.indices) {
-        println("Mult 3: ${arr3[i]}")
-    }
-
-        for ((index,value) in arr3.withIndex())
-        {
-            println("Index: $index Value : $value")
-        }
+fun nextTwo(num:Int): Pair<Int, Int> {
+    return Pair(num+1,num+2)
 
 }
+
+
+
+
+
+
