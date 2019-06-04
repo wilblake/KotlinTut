@@ -1,15 +1,28 @@
 package demo
 fun main (args: Array<String>) {
 
+val age = 8
 
-val oneTo10 = 1..10
-val alpha = "A".."Z"
-println("R in Alpha: ${"R" in alpha}")
-val tenTo1 = 10.downTo(1)
-val twoTo20 = 2.rangeTo(20)
-val rng3 = oneTo10.step(3)
+ if (age<5){
+  println("Go to Preschool")
+ } else if (age==5) {
+  println("Go to Kindergarten")
+ } else if ((age>5) && (age <=17))
+ {
+  val grade = age -5
+  println("Go to Grade $grade")
+ } else {
+  println("Go to College")
+ }
 
- for (x in rng3) println("rng3 : $x")
-for (x in tenTo1.reversed() ) println("Reverse: $x")
+ when (age) {
+  0,1,2,3,4 -> println("Go to Preschool")
+  5 -> println("Go to Kindergargten")
+  in 6..17 -> {
+   val grade = age -5
+   println("Go to grade $grade")
+  }
+  else -> println("Go to college")
+ }
 
 }
